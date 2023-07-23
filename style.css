@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align: center;
   margin-top: 50px;
   background-color: #f0f0f0;
@@ -8,7 +8,7 @@ body {
 .container {
   border: 1px solid #ccc;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 8px;
@@ -24,18 +24,18 @@ h1 {
   margin-bottom: 20px;
 }
 
-.stopwatch-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.countdown-container {
+  margin-bottom: 20px;
 }
 
-.stopwatch {
-  font-size: 24px;
+.countdown {
   margin-bottom: 10px;
-  background-color: #3498db;
+}
+.countdown-timer {
+  font-size: 36px;
+  background-color: #f39c12;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 50%;
   width: 140px;
   height: 140px;
@@ -43,15 +43,106 @@ h1 {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  position: relative;
+}
+@keyframes countdownScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.button-group {
+.countdown-timer.running {
+  animation: countdownScale 1.5s ease-in-out infinite;
+}
+
+
+
+.countdown-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.countdown-buttons button {
+  padding: 10px;
+  margin: 0 5px;
+  width: 80px;
+  border: none;
+  background-color: #6b6765;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-buttons button:hover {
+  background-color: #d35400;
+}
+
+.countdown-buttons button:active {
+  background-color: #a84300;
+}
+
+.countdown-buttons, .stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px;
+  margin: 0 5px;
+  width: 80px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  background-color: #1e6091;
+}
+.stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.stopwatch {
+  width: 140px;
+  height: 140px;
+  border: 10px solid #2ecc71;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #2ecc71;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.stopwatch-buttons {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
 
-button {
+.stopwatch-buttons button {
   padding: 10px;
   margin-bottom: 10px;
   width: 120px;
@@ -63,10 +154,10 @@ button {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
+.stopwatch-buttons button:hover {
   background-color: #2ecc71;
 }
 
-button:active {
+.stopwatch-buttons button:active {
   background-color: #1e8449;
 }
